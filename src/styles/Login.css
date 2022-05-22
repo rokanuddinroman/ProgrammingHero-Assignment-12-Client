@@ -1,0 +1,62 @@
+.login-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
+}
+
+.options {
+    padding-bottom: 6px;
+    border-bottom: 1px solid black;
+}
+
+.options a {
+    padding: 6px 10px;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.options-link.active {
+    border-bottom: 3px solid black;
+}
+
+.outline-button {
+    padding: 10px 16px;
+    width: 100%;
+    border: 1px solid rgb(202, 202, 202);
+    border-radius: 8px;
+
+}
+
+.outline-button:hover {
+    border: 1px solid rgb(83, 83, 83);
+    background-color: rgb(250, 250, 250);
+
+}
+
+.form-input {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid rgb(202, 202, 202);
+    border-radius: 8px;
+}
+
+.form-input:focus {
+    border: 1.5px solid#1892FF;
+    outline: 2px solid #9fd2ffb6;
+}
+
+.submit-button {
+    padding: 7px;
+    width: 100%;
+    background-color: #0077FF;
+    color: white;
+    border-radius: 10px;
+    border: 0px;
+    font-weight: 500;
+    font-size: 17px;
+}
+
+.error-message span {
+    text-align: right;
+    font-size: 14px;
+}

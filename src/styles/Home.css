@@ -1,0 +1,43 @@
+.hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: white;
+}
+
+.home-container {}
+
+.hero-heading {
+    font-weight: 800;
+    font-size: 48px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0.5rem;
+    color: white;
+}
+
+.light-button {
+    margin-top: 1rem;
+    padding: 10px 15px;
+    font-weight: 600;
+    border-radius: 10px;
+    background-color: #374151;
+    color: rgb(226, 226, 226) !important;
+}
+
+.icons {
+    font-size: 4.5rem;
+    padding: 4px;
+    border-radius: 5px;
+    color: #22D3EE;
+    background-color: #1F2937;
+    border: 2px solid #334155;
+}
+
+.stats div {
+    margin-inline: auto;
+}
