@@ -1,15 +1,25 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { FcGoogle } from 'react-icons/fc';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import '../../styles/Login.css'
+import { FaUserCircle } from 'react-icons/fa';
+import LightLoading from '../../components/Loading/LightLoading';
+import BlueLoading from '../../components/Loading/BlueLoading';
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
-    const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
 
     const onSubmit = data => {
+        signInWithEmailAndPassword(data.email, data.password)
     }
 
     return (
@@ -20,15 +30,24 @@ const Login = () => {
                     <NavLink className='options-link' to='/login'>Login</NavLink>
                     <NavLink className='options-link' to='/registration'>Create a new account</NavLink>
                 </div>
+                <h1 className='my-5 flex items-center text-3xl font-bold'><FaUserCircle className='mr-2 text-4xl text-[#00BA33] bg-[#e6f8ec] p-[6px] rounded-[50%]' />Sign In</h1>
 
-                <button onClick={() => signInWithGoogle()} className='mt-8 outline-button flex items-center justify-center'><FcGoogle className='inline mr-4 text-[18px]' />Sign in with Google</button>
+                <button onClick={() => signInWithGoogle()} className='mt-8 outline-button flex items-center justify-center'>{
+                    googleLoading ? <LightLoading /> :
+                        <>
+                            <FcGoogle className='inline mr-4 text-[18px]' />Sign in with Google
+                        </>
+                }
+                </button>
                 <hr className='my-4' />
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className=' pb-3'>
+                        <label htmlFor="email" className='font-[500]'>Email</label>
                         <input
+                            id="email"
                             className='form-input'
                             type="email"
-                            placeholder="Your Email"
+                            placeholder="user@email.com"
                             {...register("email", {
                                 required: {
                                     value: true,
@@ -40,15 +59,20 @@ const Login = () => {
                                 }
                             })} />
                         <div classname="error-message">
-                            {errors.email?.type === 'required' && <span className="text-red-500">{errors.email.message}</span>}
-                            {errors.email?.type === 'pattern' && <span className="text-red-500">{errors.email.message}</span>}
+                            {errors.email?.type === 'required' && <span className="block text-right text-red-500 text-sm">{errors.email.message}</span>}
+                            {errors.email?.type === 'pattern' && <span className="block text-right text-red-500 text-sm">{errors.email.message}</span>}
                         </div>
                     </div>
                     <div className='pb-5'>
+                        <div className='flex justify-between items-center'>
+                            <label htmlFor="password" className='font-[500]'>Password</label>
+                            <Link className='text-[#0077FF] text-sm' to="/reset">Forget Password?</Link>
+                        </div>
                         <input
+                            id="password"
                             className='form-input'
                             type="password"
-                            placeholder="Your Password"
+                            placeholder="at least 6 characters"
                             {...register("password", {
                                 required: {
                                     value: true,
@@ -59,11 +83,15 @@ const Login = () => {
                                     message: 'Must be 6 characters or longer'
                                 }
                             })} />
-                        {errors.password?.type === 'required' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
-                        {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-500">{errors.password.message}</span>}
+                        {errors.password?.type === 'required' && <span className="block text-right text-red-500 text-sm">{errors.password.message}</span>}
+                        {errors.password?.type === 'minLength' && <span className="block text-right text-red-500 text-sm">{errors.password.message}</span>}
                     </div>
 
-                    <input className='submit-button' value="Login" type="submit" />
+                    {
+                        loading ? <><button className='submit-button'><BlueLoading /></button></>
+                            :
+                            <><input className='submit-button' value="Login" type="submit" /></>
+                    }
                 </form>
             </div>
         </div>

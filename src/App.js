@@ -1,3 +1,4 @@
+import { Toaster } from "react-hot-toast";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home/Home";
@@ -7,6 +8,7 @@ import Registration from "./pages/Registration/Registration";
 function App() {
   return (
     <div>
+      <Toaster />
       <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>

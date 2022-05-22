@@ -56,6 +56,11 @@
     font-size: 17px;
 }
 
+.submit-button:hover {
+    background-color: #006de9;
+    cursor: pointer;
+}
+
 .error-message span {
     text-align: right;
     font-size: 14px;
