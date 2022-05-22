@@ -1,10 +1,10 @@
 import React from 'react';
-import Stats from '../../components/Home/Stats';
+import Stats from '../../../components/Home/Stats';
 import { IoCartOutline } from 'react-icons/io5';
-import '../../styles/Home.css'
+import '../../../styles/Home.css'
 const Home = () => {
     return (
-        <div className='bg-primary'>
+        <div className='bg-primary mt-[56px]'>
             <div className="max-w-7xl mx-auto home-container min-h-screen pb-5">
                 <div className="hero-container">
                     <div className="hero-introduction mt-[6rem] mb-[5.2rem]">

@@ -25,7 +25,7 @@ const Registration = () => {
             return;
         }
         await createUserWithEmailAndPassword(data.email, data.password);
-        await updateProfile({ displayName: data.name })
+        await updateProfile({ displayName: data.name, photoURL: 'https://cdn.dribbble.com/users/1176657/screenshots/15468294/media/34af996ddff444391edab94abcf3c7f3.png?compress=1&resize=400x300&vertical=top' })
         toast.success('Verification Mail Sent')
     }
 
@@ -109,7 +109,7 @@ const Registration = () => {
                     </div>
                     <div className='pb-5'>
                         <div className='flex justify-between items-center'>
-                            <label htmlFor="confirmpassword" className='font-[500]'>Password</label>
+                            <label htmlFor="confirmpassword" className='font-[500]'>Confirm Password</label>
                         </div>
                         <input
                             id="confirmpassword"
