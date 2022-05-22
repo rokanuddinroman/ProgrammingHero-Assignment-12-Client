@@ -17,6 +17,10 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+    let authError;
+    if (error || googleError) {
+        authError = <p className='text-red-500'><small>{error?.message || googleError?.message}</small></p>
+    }
 
     const onSubmit = data => {
         signInWithEmailAndPassword(data.email, data.password)
@@ -86,6 +90,7 @@ const Login = () => {
                         {errors.password?.type === 'required' && <span className="block text-right text-red-500 text-sm">{errors.password.message}</span>}
                         {errors.password?.type === 'minLength' && <span className="block text-right text-red-500 text-sm">{errors.password.message}</span>}
                     </div>
+                    {authError}
 
                     {
                         loading ? <><button className='submit-button'><BlueLoading /></button></>
