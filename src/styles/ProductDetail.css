@@ -1,0 +1,32 @@
+.product-detail {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.product-detail img {
+    width: 60%;
+    float: center;
+    margin-inline: auto;
+}
+
+.product-detail h1 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 0.7rem;
+}
+
+.product-detail h2 {
+    font-size: 56px;
+    font-weight: 800;
+    margin-bottom: 0.7rem;
+}
+
+.product-detail input {
+    padding: 10px;
+    border: 2px solid #111827;
+}
+
+.product-detail h4 {
+    font-size: 20px;
+    font-weight: 600;
+}

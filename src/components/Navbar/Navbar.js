@@ -11,7 +11,7 @@ const Navbar = () => {
         signOut(auth);
     };
     return (
-        <div className='bg-primary text-white fixed w-[100%] top-0'>
+        <div className='bg-primary text-white fixed w-[100%] top-0 z-50'>
             <div className="max-w-7xl mx-auto flex justify-between items-center">
                 <h1 className='py-4'>
                     Logo

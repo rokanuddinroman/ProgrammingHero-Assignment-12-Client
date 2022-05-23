@@ -41,3 +41,52 @@
 .stats div {
     margin-inline: auto;
 }
+
+.product-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.product-card {
+    border: 1px solid gray;
+    border-radius: 8px;
+}
+
+.product-card img {
+    border-radius: 8px 8px 0px 0px;
+    border-bottom: 1px solid gray;
+}
+
+.product-card h1 {
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.product-card p {
+    font-size: 14px;
+}
+
+.product-card h2 {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.search-div {}
+
+.search-div input {
+    width: 100%;
+    border-radius: 7px;
+    padding: 10px;
+    padding-left: 42px;
+    border: 1.5px solid rgb(153, 153, 153);
+}
+
+.search-div input:focus {
+    border: 1.5px solid rgb(112, 112, 112);
+    outline: 0px;
+}
+
+.product-card img {
+    width: 100%;
+}
