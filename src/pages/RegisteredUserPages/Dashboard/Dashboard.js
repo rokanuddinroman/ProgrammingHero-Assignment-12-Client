@@ -14,7 +14,7 @@ const Dashboard = () => {
             <div className="relative">
                 <div className='dashboard-sidebar'>
                     <div onClick={() => { navigate('/updateprofile') }} className='cursor-pointer flex items-center mb-5 border-[1px] border-gray p-[0.5rem] rounded-[8px] hover:bg-[#f2fbff]'>
-                        <img className='rounded-[10px] w-[60px]' src={user.photoURL} alt="" />
+                        <img className='rounded-[10px] object-cover w-[60px] h-[60px]' src={user.photoURL} alt="" />
                         <div className="ml-2">
                             <h1 className="font-[500] text-[18px]">{user.displayName}</h1>
                             <Link className='text-[#4CCCFF] flex items-center' to="/updateprofile"><FiEdit className="mr-[0.3rem]" />Update Profile</Link>
@@ -31,7 +31,6 @@ const Dashboard = () => {
             </div>
             <div className='dashboard-content p-4 '>
                 <div className="bg-white rounded-[8px] p-4 drop-shadow-sm">
-                    <h1>h1</h1>
                     <Outlet />
                 </div>
             </div>

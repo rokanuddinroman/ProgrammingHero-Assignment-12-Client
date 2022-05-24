@@ -1,17 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { FiSearch } from 'react-icons/fi';
 import { IoCart } from 'react-icons/io5';
+import useProduct from '../../hooks/useProduct';
 import Product from './Product';
 
 const ProductShowcase = () => {
-    const [products, setProducts] = useState([])
-    useEffect(() => {
-        fetch('http://localhost:4000/product')
-            .then(res => res.json())
-            .then(data => {
-                setProducts(data)
-            })
-    }, [])
+    const { products, setProducts } = useProduct()
     return (
         <div id='products' className='max-w-7xl mx-auto'>
 

@@ -52,7 +52,9 @@ const Login = () => {
                         </>
                 }
                 </button>
-                <hr className='my-4' />
+                <div class="flex flex-col w-full border-opacity-50">
+                    <div class="divider">OR</div>
+                </div>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className=' pb-3'>
                         <label htmlFor="email" className='font-[500]'>Email</label>

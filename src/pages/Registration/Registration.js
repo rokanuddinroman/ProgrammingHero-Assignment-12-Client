@@ -3,7 +3,7 @@ import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfil
 import { useForm } from 'react-hook-form';
 import { FcGoogle } from 'react-icons/fc';
 import { FaUserCircle } from 'react-icons/fa';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import BlueLoading from '../../components/Loading/BlueLoading';
 import LightLoading from '../../components/Loading/LightLoading';
 import auth from '../../firebase.init';
@@ -11,12 +11,19 @@ import toast from 'react-hot-toast';
 
 const Registration = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
+    const location = useLocation();
+    const navigate = useNavigate()
+    const from = location.state?.from?.pathname || '/'
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
     const [createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
     let authError;
     if (error || googleError || updateError) {
         authError = <p className='text-red-500'><small>{error?.message || googleError?.message || updateError?.message}</small></p>
+    }
+
+    if (user || googleUser) {
+        navigate(from, { replace: true })
     }
 
     const onSubmit = async data => {
@@ -44,7 +51,9 @@ const Registration = () => {
                             <FcGoogle className='inline mr-4 text-[18px]' />Sign in with Google
                         </>
                 }</button>
-                <hr className='my-4' />
+                <div class="flex flex-col w-full border-opacity-50">
+                    <div class="divider">OR</div>
+                </div>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className=' pb-3'>
                         <label htmlFor="name" className='font-[500]'>Name</label>
