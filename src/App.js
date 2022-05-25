@@ -12,9 +12,9 @@ import ProductDetail from "./components/Home/ProductDetail";
 import MyOrders from "./pages/NormalUserPages/MyOrders/MyOrders";
 import AddReview from "./pages/NormalUserPages/AddReview/AddReview";
 import AddProduct from "./pages/AdminUserPages/AddProduct/AddProduct";
-import MakeAdmin from "./pages/AdminUserPages/MakeAdmin/MakeAdmin";
 import ManageOrders from "./pages/AdminUserPages/ManageOrders/ManageOrders";
 import ManageProducts from "./pages/AdminUserPages/ManageProducts/ManageProducts";
+import ManageUsers from "./pages/AdminUserPages/ManageUsers/ManageUsers";
 
 function App() {
   return (
@@ -36,7 +36,7 @@ function App() {
           <Route index element={<MyOrders />}></Route>
           <Route path="addreview" element={<AddReview />}></Route>
           <Route path="addproduct" element={<AddProduct />}></Route>
-          <Route path="makeadmin" element={<MakeAdmin />}></Route>
+          <Route path="manageusers" element={<ManageUsers />}></Route>
           <Route path="manageorders" element={<ManageOrders />}></Route>
           <Route path="manageproducts" element={<ManageProducts />}></Route>
 

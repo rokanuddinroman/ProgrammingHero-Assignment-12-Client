@@ -11,6 +11,7 @@ const Navbar = () => {
     const [user] = useAuthState(auth)
     const logout = () => {
         signOut(auth);
+        localStorage.removeItem('accessToken');
     };
     return (
         <div className='bg-primary text-white fixed w-[100%] top-0 z-50'>

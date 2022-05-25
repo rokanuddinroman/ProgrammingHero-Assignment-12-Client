@@ -8,6 +8,7 @@ import '../../styles/Login.css'
 import { FaUserCircle } from 'react-icons/fa';
 import LightLoading from '../../components/Loading/LightLoading';
 import BlueLoading from '../../components/Loading/BlueLoading';
+import useToken from '../../hooks/useToken';
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
@@ -21,13 +22,15 @@ const Login = () => {
     const location = useLocation();
     const navigate = useNavigate()
     const from = location.state?.from?.pathname || '/'
+    const [token] = useToken(user || googleUser)
+
 
     let authError;
 
     if (error || googleError) {
         authError = <p className='text-red-500'><small>{error?.message || googleError?.message}</small></p>
     }
-    if (user || googleUser) {
+    if (token) {
         navigate(from, { replace: true })
     }
 

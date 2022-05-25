@@ -16,7 +16,7 @@ const Dashboard = () => {
                     <div onClick={() => { navigate('/updateprofile') }} className='cursor-pointer flex items-center mb-5 border-[1px] border-gray p-[0.5rem] rounded-[8px] hover:bg-[#f2fbff]'>
                         <img className='rounded-[10px] object-cover w-[60px] h-[60px]' src={user.photoURL} alt="" />
                         <div className="ml-2">
-                            <h1 className="font-[500] text-[18px]">{user.displayName}</h1>
+                            <h1 className="font-[500] text-[18px] mb-1">{user.displayName}</h1>
                             <Link className='text-[#4CCCFF] flex items-center' to="/updateprofile"><FiEdit className="mr-[0.3rem]" />Update Profile</Link>
                         </div>
                     </div>
@@ -24,7 +24,7 @@ const Dashboard = () => {
                     <NavLink className='dashboard-link' to='/dashboard/'><BsFolderFill color='#4CCCFF' className='mr-[5px]' /> My Orders</NavLink>
                     <NavLink className='dashboard-link' to='/dashboard/addreview'><BsFolderFill color='#4CCCFF' className='mr-[5px]' />Add Review</NavLink>
                     <NavLink className='dashboard-link' to='/dashboard/addproduct'><BsFolderFill color='#4CCCFF' className='mr-[5px]' />Add Product</NavLink>
-                    <NavLink className='dashboard-link' to='/dashboard/makeadmin'><BsFolderFill color='#4CCCFF' className='mr-[5px]' />Make Admin</NavLink>
+                    <NavLink className='dashboard-link' to='/dashboard/manageusers'><BsFolderFill color='#4CCCFF' className='mr-[5px]' />Manage Users</NavLink>
                     <NavLink className='dashboard-link' to='/dashboard/manageorders'><BsFolderFill color='#4CCCFF' className='mr-[5px]' />Manage Orders</NavLink>
                     <NavLink className='dashboard-link' to='/dashboard/manageproducts'><BsFolderFill color='#4CCCFF' className='mr-[5px]' />Manage Products</NavLink>
                 </div>

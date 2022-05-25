@@ -57,6 +57,7 @@ const AddReview = () => {
                     <input className='py-[10px] px-4 bg-primary rounded-[8px] text-white font-[500] active:border-[0px]' type="submit" value="Create Review" />
                 </div>
             </form>
+            <hr className='my-5 bg-gray-300' />
             <h3 className='text-[20px] font-[600] flex items-center mt-4'><MdReviews color='white' className='inline p-2 mr-2 bg-[#111827] rounded-[50%] text-white text-[40px]' />Other reviews</h3>
             <div className='grid grid-cols-3 gap-4 mt-4'>
                 {

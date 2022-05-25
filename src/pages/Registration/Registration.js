@@ -8,6 +8,7 @@ import BlueLoading from '../../components/Loading/BlueLoading';
 import LightLoading from '../../components/Loading/LightLoading';
 import auth from '../../firebase.init';
 import toast from 'react-hot-toast';
+import useToken from '../../hooks/useToken';
 
 const Registration = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
@@ -17,14 +18,16 @@ const Registration = () => {
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
     const [createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+    const [token] = useToken(user || googleUser)
     let authError;
     if (error || googleError || updateError) {
         authError = <p className='text-red-500'><small>{error?.message || googleError?.message || updateError?.message}</small></p>
     }
 
-    if (user || googleUser) {
+    if (token) {
         navigate(from, { replace: true })
     }
+
 
     const onSubmit = async data => {
         if (data.password !== data.confirmpassword) {
