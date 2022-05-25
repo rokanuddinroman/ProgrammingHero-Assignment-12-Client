@@ -1,0 +1,9 @@
+.review-container {
+    display: grid;
+    gap: 1rem;
+    grid-auto-flow: column;
+    grid-auto-columns: 24%;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    padding-block: 1rem;
+}

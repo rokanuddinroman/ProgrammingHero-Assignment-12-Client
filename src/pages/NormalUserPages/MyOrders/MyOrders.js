@@ -59,6 +59,7 @@ const MyOrders = () => {
                     <p style={{ display: "flex", justifyContent: "space-between" }}>Status
                         {/* <Link style={{ display: "flex", alignItems: "center" }} className='thin__button' to="/addproduct"><MdAdd />Add new item</Link> */}
                     </p>
+                    <p>Actions</p>
                 </div>
                 {
                     myProducts.map(product => <div className='product-row flex items-center'>
@@ -70,9 +71,12 @@ const MyOrders = () => {
                         <p className='quantity-column relative '>
                             <span className='py-[6px] px-[10px] bg-green-100 text-green-500 rounded-[8px]'>{product?.status}</span>
                             <span className="table-icons">
-                                <button onClick={() => productPayment(product._id)} className='absolute right-[45px] top-[-7px] icon-button bg-blue-100 hover:bg-blue-200'><MdPayment className='text-[#4CCCFF] text-[18px]' /></button>
-                                <button onClick={() => handleDelete(product._id)} className='absolute right-0 top-[-7px] icon-button bg-red-100 hover:bg-red-200'><AiFillDelete className='text-red-500 text-[18px]' /></button>
+
                             </span>
+                        </p>
+                        <p className='flex text-right justify-end'>
+                            <button onClick={() => productPayment(product._id)} className='icon-button bg-blue-100 hover:bg-blue-200'><MdPayment className='text-[#4CCCFF] text-[18px]' /></button>
+                            <button onClick={() => handleDelete(product._id)} className=' icon-button bg-red-100 hover:bg-red-200'><AiFillDelete className='text-red-500 text-[18px]' /></button>
                         </p>
                     </div>)
                 }

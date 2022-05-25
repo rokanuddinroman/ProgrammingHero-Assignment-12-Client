@@ -1,0 +1,18 @@
+.product-form input:focus {
+    /* padding: 10px;
+    border: 1px solid gray;
+    margin-bottom: 5px; */
+    outline: 0px;
+    border: 2px solid #c9cdcf;
+}
+
+.product-form textarea:focus {
+    outline: 0px;
+    border: 2px solid #c9cdcf;
+}
+
+.product-form-container {
+    /* display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5px; */
+}

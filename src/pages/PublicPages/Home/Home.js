@@ -3,6 +3,7 @@ import Stats from '../../../components/Home/Stats';
 import { IoCartOutline } from 'react-icons/io5';
 import '../../../styles/Home.css'
 import ProductShowcase from '../../../components/Home/ProductShowcase';
+import Reviews from '../../../components/Home/Reviews';
 const Home = () => {
     return (
         <div>
@@ -20,6 +21,7 @@ const Home = () => {
                 </div>
             </div>
             <ProductShowcase />
+            <Reviews />
         </div>
     );
 };

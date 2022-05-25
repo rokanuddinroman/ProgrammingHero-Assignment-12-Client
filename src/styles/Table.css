@@ -1,6 +1,6 @@
 .product-row {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr 1fr 1fr 1fr 100px;
     padding: 0.5rem;
     font-weight: 500;
     background-color: rgb(255, 255, 255);
@@ -27,7 +27,7 @@
 
 .product-row-heading {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr 1fr 1fr 1fr 100px;
     padding: 0.5rem;
     border: 1px solid rgb(110, 110, 110);
     border-radius: 7px 7px 0px 0px;

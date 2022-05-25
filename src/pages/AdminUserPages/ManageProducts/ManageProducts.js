@@ -31,6 +31,7 @@ const ManageProducts = () => {
                     <p>Available Quantity</p>
                     <p>Price Per Unit</p>
                     <p>Minimum Quantity</p>
+                    <p>Actions</p>
                 </div>
                 {
                     products.map(product => <div className='product-row flex items-center'>
@@ -41,9 +42,9 @@ const ManageProducts = () => {
                         <p>{product.perUnitPrice}$</p>
                         <p className='quantity-column relative '>
                             <span className=''>{product?.minimumOrderQuantity}</span>
-                            <span className="table-icons">
-                                <button onClick={() => handleDelete(product._id)} className='absolute right-0 top-[-7px] icon-button bg-red-100 hover:bg-red-200'><AiFillDelete className='text-red-500 text-[18px]' /></button>
-                            </span>
+                        </p>
+                        <p className='flex text-right justify-end'>
+                            <button onClick={() => handleDelete(product._id)} className='icon-button bg-red-100 hover:bg-red-200'><AiFillDelete className='text-red-500 text-[18px]' /></button>
                         </p>
                     </div>)
                 }
