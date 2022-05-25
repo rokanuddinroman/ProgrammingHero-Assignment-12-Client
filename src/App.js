@@ -15,6 +15,7 @@ import AddProduct from "./pages/AdminUserPages/AddProduct/AddProduct";
 import ManageOrders from "./pages/AdminUserPages/ManageOrders/ManageOrders";
 import ManageProducts from "./pages/AdminUserPages/ManageProducts/ManageProducts";
 import ManageUsers from "./pages/AdminUserPages/ManageUsers/ManageUsers";
+import RequireAdmin from "./components/RequireAdmin/RequireAdmin";
 
 function App() {
   return (
@@ -35,10 +36,10 @@ function App() {
 
           <Route index element={<MyOrders />}></Route>
           <Route path="addreview" element={<AddReview />}></Route>
-          <Route path="addproduct" element={<AddProduct />}></Route>
-          <Route path="manageusers" element={<ManageUsers />}></Route>
-          <Route path="manageorders" element={<ManageOrders />}></Route>
-          <Route path="manageproducts" element={<ManageProducts />}></Route>
+          <Route path="addproduct" element={<RequireAdmin><AddProduct /></RequireAdmin>}></Route>
+          <Route path="manageusers" element={<RequireAdmin><ManageUsers /></RequireAdmin>}></Route>
+          <Route path="manageorders" element={<RequireAdmin><ManageOrders /></RequireAdmin>}></Route>
+          <Route path="manageproducts" element={<RequireAdmin><ManageProducts /></RequireAdmin>}></Route>
 
         </Route>
         <Route path="*" element={<NotFound />}></Route>

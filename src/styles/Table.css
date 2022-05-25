@@ -21,7 +21,7 @@
 .product-name img {
     margin-right: 0.5rem;
     width: 30px;
-    border-radius: 50%;
+    border-radius: 20%;
     aspect-ratio: 1/1;
 }
 
@@ -50,7 +50,7 @@
     display: flex;
 }
 
-.product-row button {
+.icon-button {
     /* background-color: rgb(221, 221, 221); */
     border: none;
     border-radius: 50%;

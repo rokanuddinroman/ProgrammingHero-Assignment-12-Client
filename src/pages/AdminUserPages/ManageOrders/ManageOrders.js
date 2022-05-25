@@ -52,9 +52,7 @@ const ManageOrders = () => {
                         <p>{product.quantity}</p>
                         <p>{product.totalPrice}$</p>
                         <p className='quantity-column relative '>
-                            <span className='py-[6px] px-[10px] bg-green-100 text-green-500 rounded-[8px]'>{product?.status}</span>
-                            <span className="table-icons">
-                            </span>
+                            <button className=' w-[90px] px-2 py-[2px] bg-green-100 font-[500] rounded-[8px] text-green-600' disabled>{product?.status}</button>
                         </p>
                         <p className='flex text-right justify-end'>
                             <button onClick={() => handleDelete(product._id)} className='icon-button bg-red-100 hover:bg-red-200'><AiFillDelete className='text-red-500 text-[18px]' /></button></p>
