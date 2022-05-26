@@ -15,7 +15,7 @@ const Dashboard = () => {
         <div className='dashboard-container relative mt-[56px]'>
             <div className="relative">
                 <div className='dashboard-sidebar'>
-                    <div onClick={() => { navigate('/myprofile') }} className='cursor-pointer flex items-center mb-5 border-[1px] border-gray p-[0.5rem] rounded-[8px] hover:bg-[#f2fbff]'>
+                    <div onClick={() => { navigate('/dashboard/myprofile') }} className='cursor-pointer flex items-center mb-5 border-[1px] border-gray p-[0.5rem] rounded-[8px] hover:bg-[#f2fbff]'>
                         <img className='rounded-[10px] object-cover w-[60px] h-[60px]' src={user.photoURL} alt="" />
                         <div className="ml-2">
                             <h1 className="font-[500] text-[18px] mb-1">{user.displayName}</h1>
