@@ -3,20 +3,25 @@ import '../../styles/Review.css'
 import { IoIosQuote } from 'react-icons/io';
 import { FaStar } from 'react-icons/fa';
 import Star from './Star';
+import ApiLoadingLight from '../Loading/ApiLoadingLight';
+import ApiLoading from '../Loading/ApiLoading';
 const Reviews = () => {
     const [reviews, setReviews] = useState([])
+    const [spinner, setSpinner] = useState(true)
+
     useEffect(() => {
         fetch('http://localhost:4000/review')
             .then(res => res.json())
             .then(data => {
                 setReviews(data)
+                setSpinner(false)
             })
     }, [])
     return (
         <div className="my-8">
             <h1 className='max-w-7xl mx-auto text-3xl mt-8 mb-4 font-bold flex items-center justify-left'><FaStar color='white' className='inline p-2 mr-2 bg-[#111827] rounded-[50%] text-white text-[40px]' /> <>Customer Reviews</></h1>
             <div className="bg-[#f5f5f5]">
-                <div className="review-container max-w-7xl mx-auto">
+                {spinner ? <ApiLoadingLight /> : <div className="review-container max-w-7xl mx-auto">
                     {
                         reviews.map(review =>
                             <div className='bg-white p-4 relative review-card drop-shadow'>
@@ -52,7 +57,7 @@ const Reviews = () => {
                             </div>
                         )
                     }
-                </div>
+                </div>}
             </div>
         </div>
     );

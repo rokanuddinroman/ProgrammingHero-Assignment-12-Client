@@ -49,6 +49,7 @@ const ProductDetail = () => {
         event.preventDefault()
         const myOrder = {
             email: user.email,
+            displayName: user.displayName,
             userAddress: event.target.address.value,
             userNumber: event.target.phoneNumber.value,
             productName: product.productName,

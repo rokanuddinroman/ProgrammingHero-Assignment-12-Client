@@ -7,8 +7,8 @@ import Reviews from '../../../components/Home/Reviews';
 const Home = () => {
     return (
         <div>
-            <div className='bg-primary mt-[56px]'>
-                <div className="max-w-7xl mx-auto home-container min-h-screen pb-5">
+            <div className='bg-primary mt-[56px] pb-6'>
+                <div className="max-w-7xl mx-auto home-container">
                     <div className="hero-container">
                         <div className="hero-introduction mt-[6rem] mb-[5.2rem]">
                             <h1 className='hero-heading'><span>Beautiful UI components,</span> crafted with Tailwind CSS</h1>

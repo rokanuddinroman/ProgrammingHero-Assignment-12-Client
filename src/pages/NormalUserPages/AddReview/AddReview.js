@@ -8,10 +8,11 @@ import axios from 'axios';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import toast from 'react-hot-toast';
+import ApiLoadingLight from '../../../components/Loading/ApiLoadingLight';
 
 const AddReview = () => {
     const { products } = useProduct()
-    const { reviews } = useReview()
+    const { reviews, spinner } = useReview()
     const [user] = useAuthState(auth);
 
     const handleAddReview = event => {
@@ -59,7 +60,7 @@ const AddReview = () => {
             </form>
             <hr className='my-5 bg-gray-300' />
             <h3 className='text-[20px] font-[600] flex items-center mt-4'><MdReviews color='white' className='inline p-2 mr-2 bg-[#111827] rounded-[50%] text-white text-[40px]' />Other reviews</h3>
-            <div className='grid grid-cols-3 gap-4 mt-4'>
+            {spinner ? <ApiLoadingLight /> : <div className='grid grid-cols-3 gap-4 mt-4'>
                 {
                     reviews.map(review =>
                         <div className='bg-white p-4 relative review-card drop-shadow'>
@@ -95,7 +96,7 @@ const AddReview = () => {
                         </div>
                     )
                 }
-            </div>
+            </div>}
         </div>
     );
 };

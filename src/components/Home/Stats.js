@@ -4,7 +4,7 @@ import { IoIosPeople } from 'react-icons/io';
 import '../../styles/Home.css'
 const Stats = () => {
     return (
-        <div className='stats-container mt-[7rem]'>
+        <div className='stats-container mt-[7rem] '>
 
             <div className='flex items-center'>
                 <IoBag className='icons mr-6' />

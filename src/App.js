@@ -16,8 +16,17 @@ import ManageOrders from "./pages/AdminUserPages/ManageOrders/ManageOrders";
 import ManageProducts from "./pages/AdminUserPages/ManageProducts/ManageProducts";
 import ManageUsers from "./pages/AdminUserPages/ManageUsers/ManageUsers";
 import RequireAdmin from "./components/RequireAdmin/RequireAdmin";
+import Payment from "./pages/NormalUserPages/Payment/Payment";
+import ReviewsPage from "./pages/PublicPages/ReviewsPage/ReviewsPage";
+import Blogs from "./pages/PublicPages/Blogs/Blogs";
+import MyProfile from "./pages/RegisteredUserPages/MyProfile/MyProfile"
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "./firebase.init";
+import useAdmin from "./hooks/useAdmin";
 
 function App() {
+  const [user] = useAuthState(auth)
+  const [admin] = useAdmin(user)
   return (
     <div>
       <Toaster />
@@ -30,16 +39,23 @@ function App() {
           </RequireAuth>
         }></Route>
         <Route path="/login" element={<Login />}></Route>
+        <Route path="/reviews" element={<ReviewsPage />}></Route>
+        <Route path="/blogs" element={<Blogs />}></Route>
         <Route path="/registration" element={<Registration />}></Route>
         <Route path="/reset" element={<ForgetPassword />}></Route>
         <Route path="/dashboard" element={<RequireAuth><Dashboard /></RequireAuth>}>
-
-          <Route index element={<MyOrders />}></Route>
-          <Route path="addreview" element={<AddReview />}></Route>
-          <Route path="addproduct" element={<RequireAdmin><AddProduct /></RequireAdmin>}></Route>
-          <Route path="manageusers" element={<RequireAdmin><ManageUsers /></RequireAdmin>}></Route>
-          <Route path="manageorders" element={<RequireAdmin><ManageOrders /></RequireAdmin>}></Route>
-          <Route path="manageproducts" element={<RequireAdmin><ManageProducts /></RequireAdmin>}></Route>
+          <Route path="myprofile" element={<MyProfile />}></Route>
+          {!admin && <>
+            <Route index element={<MyOrders />}></Route>
+            <Route path="addreview" element={<AddReview />}></Route>
+          </>}
+          <Route path="payment/:paymentId" element={<Payment />}></Route>
+          {admin && <>
+            <Route index element={<RequireAdmin><AddProduct /></RequireAdmin>}></Route>
+            <Route path="manageusers" element={<RequireAdmin><ManageUsers /></RequireAdmin>}></Route>
+            <Route path="manageorders" element={<RequireAdmin><ManageOrders /></RequireAdmin>}></Route>
+            <Route path="manageproducts" element={<RequireAdmin><ManageProducts /></RequireAdmin>}></Route>
+          </>}
 
         </Route>
         <Route path="*" element={<NotFound />}></Route>
