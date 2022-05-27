@@ -19,9 +19,9 @@ const ForgetPassword = () => {
         toast.success('Sent email')
     }
     return (
-        <div className='mt-[56px] max-w-7xl mb-6 mx-auto login-container'>
+        <div className='mt-[56px] mb-6 mx-auto login-container'>
             <div className='mt-8 mr-8' style={{ borderRight: "1px solid black" }}></div>
-            <div className='mt-8 w-[80%]'>
+            <div className='mt-8 w-[450px] mx-auto bg-white p-6 my-6 rounded-[12px]'>
                 <div className='options'>
                     <NavLink className='options-link' to='/login'>Login</NavLink>
                     <NavLink className='options-link' to='/reset'>Reset</NavLink>

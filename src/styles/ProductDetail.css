@@ -31,4 +31,10 @@
     font-weight: 600;
 }
 
-/* .booknow:disabled */
+@media screen and (max-width:900px) {
+    .product-detail {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding-inline: 0.9rem;
+    }
+}

@@ -23,19 +23,16 @@ const ManageOrders = () => {
     }, [myProducts])
 
     const handleDelete = id => {
-        const proceed = window.confirm('Sure?')
-        if (proceed) {
-            const url = `http://localhost:4000/myorders/${id}`
-            fetch(url, {
-                method: 'DELETE'
+        const url = `http://localhost:4000/myorders/${id}`
+        fetch(url, {
+            method: 'DELETE'
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                const remaining = myProducts.filter(product => product._id !== id)
+                setMyProducts(remaining)
             })
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data);
-                    const remaining = myProducts.filter(product => product._id !== id)
-                    setMyProducts(remaining)
-                })
-        }
     }
     const handleShipping = (id) => {
         fetch(`http://localhost:4000/orders/${id}`, {

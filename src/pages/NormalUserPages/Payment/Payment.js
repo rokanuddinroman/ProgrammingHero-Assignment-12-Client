@@ -28,7 +28,7 @@ const Payment = () => {
         <div>
             <h3 className='text-[20px] font-[600] flex items-center'><MdPayment color='white' className='inline p-2 mr-2 bg-[#111827] rounded-[50%] text-white text-[40px]' />Complete your payment</h3>
 
-            <div className='grid grid-cols-2 gap-4 mt-6'>
+            <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 mt-6'>
                 <div>
                     <h1 className='mt-9 text-3xl font-bold'>Product : {order?.productName}</h1>
                     <h1 className='mt-5 text-xl font-bold'>{order?.email}</h1>

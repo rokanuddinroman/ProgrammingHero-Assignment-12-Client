@@ -7,3 +7,10 @@
     overscroll-behavior-inline: contain;
     padding-block: 1rem;
 }
+
+@media screen and (max-width:900px) {
+    .review-container {
+        grid-auto-columns: 90%;
+        padding-inline: 0.9rem;
+    }
+}

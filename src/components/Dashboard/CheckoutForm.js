@@ -76,7 +76,7 @@ const CheckoutForm = ({ order }) => {
 
             //store payment on database
             const payment = {
-                appointment: _id,
+                order: _id,
                 transactionId: paymentIntent.id
             }
             fetch(`http://localhost:4000/orders/${_id}`, {

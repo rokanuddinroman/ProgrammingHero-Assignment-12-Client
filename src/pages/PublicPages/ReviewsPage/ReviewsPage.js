@@ -9,9 +9,9 @@ const ReviewsPage = () => {
     const { reviews, spinner } = useReview()
 
     return (
-        <div className='mt-[70px] max-w-7xl mx-auto'>
+        <div className='mt-[70px] max-w-7xl mx-auto review-page'>
             <h3 className='text-[20px] font-[600] flex items-center mt-4'><MdReviews color='white' className='inline p-2 mr-2 bg-[#111827] rounded-[50%] text-white text-[40px]' />All Reviews</h3>
-            {spinner ? <ApiLoadingLight /> : <div className='grid grid-cols-3 gap-4 mt-4'>
+            {spinner ? <ApiLoadingLight /> : <div className='grid grid-cols-3 gap-4 mt-4 review-page-card'>
                 {
                     reviews.map(review =>
                         <div className='bg-white p-4 relative review-card drop-shadow'>

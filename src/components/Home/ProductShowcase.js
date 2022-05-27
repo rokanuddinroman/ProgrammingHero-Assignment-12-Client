@@ -20,7 +20,7 @@ const ProductShowcase = () => {
             </div>
             {spinner ? <ApiLoadingLight /> : <div className="product-cards">
                 {
-                    products.map(product => <Product key={product._id} product={product}></Product>)
+                    products.slice(0, 6).map(product => <Product key={product._id} product={product}></Product>)
                 }
             </div>}
         </div>

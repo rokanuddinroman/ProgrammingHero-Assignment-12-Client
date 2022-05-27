@@ -1,6 +1,7 @@
 import { Toaster } from "react-hot-toast";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
 import RequireAuth from "./components/RequireAuth/RequireAuth";
 import Dashboard from "./pages/RegisteredUserPages/Dashboard/Dashboard";
 import ForgetPassword from "./pages/ForgetPassword/ForgetPassword";
@@ -23,6 +24,7 @@ import MyProfile from "./pages/RegisteredUserPages/MyProfile/MyProfile"
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "./firebase.init";
 import useAdmin from "./hooks/useAdmin";
+import Myportfolio from "./pages/MyPortfolio/Myportfolio";
 
 function App() {
   const [user] = useAuthState(auth)
@@ -39,6 +41,7 @@ function App() {
           </RequireAuth>
         }></Route>
         <Route path="/login" element={<Login />}></Route>
+        <Route path="/myportfolio" element={<Myportfolio />}></Route>
         <Route path="/reviews" element={<ReviewsPage />}></Route>
         <Route path="/blogs" element={<Blogs />}></Route>
         <Route path="/registration" element={<Registration />}></Route>
@@ -60,6 +63,7 @@ function App() {
         </Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
+      <Footer />
     </div>
   );
 }

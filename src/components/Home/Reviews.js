@@ -19,9 +19,12 @@ const Reviews = () => {
     }, [])
     return (
         <div className="my-8">
-            <h1 className='max-w-7xl mx-auto text-3xl mt-8 mb-4 font-bold flex items-center justify-left'><FaStar color='white' className='inline p-2 mr-2 bg-[#111827] rounded-[50%] text-white text-[40px]' /> <>Customer Reviews</></h1>
+            {/* <h1 className='max-w-7xl mx-auto text-3xl mt-8 mb-4 font-bold flex items-center justify-left reviews-title'><FaStar color='white' className='inline p-2 mr-2 bg-[#111827] rounded-[50%] text-white text-[40px]' /> <>Customer Reviews</></h1> */}
             <div className="bg-[#f5f5f5]">
-                {spinner ? <ApiLoadingLight /> : <div className="review-container max-w-7xl mx-auto">
+                <h1 className='text-[16px] text-center pb-0 pt-4'>Reviews</h1>
+                <h1 className='font-[800] text-[30px] text-center'>Customer Reviews</h1>
+                <p className='text-[14px] pb-4 text-center'>Look what people are saying about us. read some of the latest reviews.</p>
+                {spinner ? <ApiLoadingLight /> : <div className="review-container max-w-7xl mx-auto mb-4">
                     {
                         reviews.map(review =>
                             <div className='bg-white p-4 relative review-card drop-shadow'>

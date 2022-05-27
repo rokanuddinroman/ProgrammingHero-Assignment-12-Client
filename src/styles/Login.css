@@ -1,7 +1,10 @@
 .login-container {
-    display: grid;
+    /* display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 1rem;
+    gap: 1rem; */
+    /* margin-bottom: 2rem; */
+    background-color: #F5F5F5;
+    padding-block: 0.7rem;
 }
 
 .options {

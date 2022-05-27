@@ -44,3 +44,20 @@
     min-height: 100vh;
     background-color: rgb(245, 245, 245);
 }
+
+@media screen and (max-width:900px) {
+    .dashboard-container {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-sidebar {
+        padding: 1rem;
+        position: static;
+        height: 100%;
+        width: 100%;
+    }
+
+    .product-form-container {
+        grid-template-columns: 1fr;
+    }
+}

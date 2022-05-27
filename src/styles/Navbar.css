@@ -1,11 +1,4 @@
 .header-btn {
-    /* padding: 3px 14px;
-    border-radius: 8px;
-    color: #fff;
-    background-color: transparent;
-    border: 1px solid #fff;
-    border-radius: 5px;
-    margin-left: 2rem; */
     margin-left: 20px;
 }
 
@@ -19,7 +12,8 @@
     display: inline;
 }
 
-.navitems .navlink.active {
+.navitems .navlink.active,
+.mobilenavitems .navlink.active {
     color: white;
     background-color: #9ca3af1e;
     padding: 6px 10px;
@@ -28,4 +22,44 @@
 
 .hr-divider {
     border-left: 1px solid gray;
+}
+
+.mobilenavitems {
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    background-color: #111827;
+    padding-bottom: 0.5rem;
+    padding-left: 0.4rem;
+}
+
+.mobilenavitems .navlink {
+    display: block;
+    margin-right: 8px;
+    margin-bottom: 0.4rem;
+}
+
+.mobilenavitems .profile-button {
+    margin-left: 70%;
+    /* background-color: #9ca3af; */
+}
+
+.show-button {
+    display: none;
+}
+
+@media screen and (max-width:900px) {
+    .navitems {
+        display: none;
+    }
+
+    .show-button {
+        display: block;
+    }
+
+    .hr-divider {
+        display: none;
+    }
 }

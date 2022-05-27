@@ -38,7 +38,7 @@ const AddReview = () => {
         <div className='product-form'>
             <h3 className='text-[20px] font-[600] flex items-center'><MdReviews color='white' className='inline p-2 mr-2 bg-[#111827] rounded-[50%] text-white text-[40px]' />Add Review</h3>
             <form onSubmit={handleAddReview} >
-                <div className='grid grid-cols-2 gap-4 mt-4'>
+                <div className='grid lg:grid-cols-2 grid-cols-1 gap-4 mt-4'>
                     <div>
                         <label htmlFor="product">Product Name</label>
                         <select className='rounded-[8px] bg-[#f6fbfe] p-[10px] mb-3 border-[2px] border-[#e3e8eb] select w-full' name="productName" id="productName" required>
@@ -60,7 +60,7 @@ const AddReview = () => {
             </form>
             <hr className='my-5 bg-gray-300' />
             <h3 className='text-[20px] font-[600] flex items-center mt-4'><MdReviews color='white' className='inline p-2 mr-2 bg-[#111827] rounded-[50%] text-white text-[40px]' />Other reviews</h3>
-            {spinner ? <ApiLoadingLight /> : <div className='grid grid-cols-3 gap-4 mt-4'>
+            {spinner ? <ApiLoadingLight /> : <div className='grid grid-cols-1 lg:grid-cols-3 gap-4 mt-4'>
                 {
                     reviews.map(review =>
                         <div className='bg-white p-4 relative review-card drop-shadow'>
