@@ -56,7 +56,7 @@ const ManageProducts = () => {
                                         <p class="py-4">You are going to delete this Product!</p>
                                         <div class="modal-action">
                                             <label onClick={() => setShowModal(null)} for="confirmModal" class="btn">Cancel</label>
-                                            <label onClick={() => handleDelete(product._id)} for="confirmModal" class="btn bg-red-500">Delete</label>
+                                            <label onClick={() => handleDelete(showModal._id)} for="confirmModal" class="btn bg-red-500">Delete</label>
                                         </div>
                                     </div>
                                 </div>

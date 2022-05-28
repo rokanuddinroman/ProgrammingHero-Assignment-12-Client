@@ -19,12 +19,12 @@ const Blogs = () => {
                 <div className="blog">
                     <h1 className='text-[22px] font-[600]'>How does prototyical inheritance work?</h1>
                     <hr className="my-3" />
-                    <p>Prototycal inheritance is basically the abily to access object properties from another object. Javascript is prototype based Object Oriented programming language. </p>
+                    <p>Prototycal inheritance is basically the abily to access object properties from another object. Think of there is a object "Fruit":Properties. So if the way we can access this Fruit Property from another object is called Prototypical Inheritance. So It works like this way we use Prototype to add new properties and manage to an existing object construcor. then we can easily inherit properties from a prototype using Javascript. Thats how it works.</p>
                 </div>
                 <div className="blog">
                     <h1 className='text-[22px] font-[600]'>Why you do not set state directly in React.</h1>
                     <hr className="my-3" />
-                    <p>When we update a state diectly, the setState might replace the updates. If we use state directly, we might lose control from the components. We would rather use new object and use setState.</p>
+                    <p>When we update a state diectly, the setState might replace the updates. If we use state directly, we might lose control from the components. We would rather use new object and use setState. thats why we dont use products(....)</p>
                 </div>
                 <div className="blog">
                     <h1 className='text-[22px] font-[600]'>How will you implement a search to find products by name?</h1>

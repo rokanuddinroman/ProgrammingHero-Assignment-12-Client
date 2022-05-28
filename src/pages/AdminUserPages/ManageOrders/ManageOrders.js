@@ -86,7 +86,7 @@ const ManageOrders = () => {
                                         <p class="py-4">You are going to cancel this Order!</p>
                                         <div class="modal-action">
                                             <label onClick={() => setShowModal(null)} for="confirmModal" class="btn">Cancel</label>
-                                            <label onClick={() => handleDelete(product._id)} for="confirmModal" class="btn bg-red-500">Delete</label>
+                                            <label onClick={() => handleDelete(showModal._id)} for="confirmModal" class="btn bg-red-500">Delete</label>
                                         </div>
                                     </div>
                                 </div>
