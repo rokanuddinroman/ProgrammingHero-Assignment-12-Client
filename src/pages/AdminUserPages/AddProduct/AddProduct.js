@@ -15,7 +15,7 @@ const AddProduct = () => {
             image: event.target.image.value,
         }
         console.log(myProduct)
-        axios.post('http://localhost:4000/product', myProduct)
+        axios.post('https://salty-shelf-96840.herokuapp.com/product', myProduct)
             .then(response => {
                 const { data } = response;
                 if (data.insertedId) {

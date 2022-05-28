@@ -13,7 +13,7 @@ const ManageUsers = () => {
     const [users, setUsers] = useState([])
     useEffect(() => {
         const getProducts = async () => {
-            const url = `http://localhost:4000/user`
+            const url = `https://salty-shelf-96840.herokuapp.com/user`
             const { data } = await axios.get(url, {
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -28,7 +28,7 @@ const ManageUsers = () => {
     }, [users])
 
     const handleDelete = email => {
-        const url = `http://localhost:4000/user/${email}`
+        const url = `https://salty-shelf-96840.herokuapp.com/user/${email}`
         fetch(url, {
             method: 'DELETE'
         })

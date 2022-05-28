@@ -5,7 +5,7 @@ const useProduct = () => {
     const [spinner, setSpinner] = useState(false)
     useEffect(() => {
         setSpinner(true)
-        fetch('http://localhost:4000/product')
+        fetch('https://salty-shelf-96840.herokuapp.com/product')
             .then(res => res.json())
             .then(data => {
                 setProducts(data)

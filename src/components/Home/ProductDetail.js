@@ -19,7 +19,7 @@ const ProductDetail = () => {
     const defaultTotalPrice = parseInt(product.minimumOrderQuantity) * parseInt(product.perUnitPrice)
 
     useEffect(() => {
-        const url = `http://localhost:4000/product/${productId}`
+        const url = `https://salty-shelf-96840.herokuapp.com/product/${productId}`
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -32,11 +32,14 @@ const ProductDetail = () => {
             setAgree(false)
             toast.error("Your order is not acceptable")
         }
-        else {
+        if (parseInt(event.target.value) >= parseInt(product.minimumOrderQuantity) && parseInt(event.target.value) <= parseInt(product.availableQuantity)) {
             setAgree(true)
         }
         // event.preventDefault()
         console.log(event.target.value)
+        console.log(agree)
+        console.log("avail", product.availableQuantity)
+        console.log("min", product.minimumOrderQuantity)
         const quantityValue = event.target.value || "0"
         setQuantity(quantityValue)
         const priceInNumber = parseInt(product.perUnitPrice || "0")
@@ -58,7 +61,7 @@ const ProductDetail = () => {
             image: product.image,
             status: "unpaid"
         }
-        axios.post('http://localhost:4000/orders', myOrder)
+        axios.post('https://salty-shelf-96840.herokuapp.com/orders', myOrder)
             .then(response => {
                 const { data } = response;
                 if (data.insertedId) {
@@ -81,6 +84,9 @@ const ProductDetail = () => {
                         <input onChange={handleQuantity} style={{ borderRadius: "7px 0px 0px 7px" }} defaultValue={product.minimumOrderQuantity} className='w-[100%]' name="quantity" type="number" />
                         {/* <input style={{ borderRadius: "0px 7px 7px 0px" }} className='border-primary bg-primary text-white font-bold' type="submit" value="Add" /> */}
                     </form>
+                    <hr className='my-3 bg-gray-300' />
+                    <div className='flex justify-between'><h6 className="font-[500]">You have to buy</h6>
+                        <h4>{product.minimumOrderQuantity}</h4></div>
                     <hr className='my-3 bg-gray-300' />
                     <div className='flex justify-between'><h6 className="font-[500]">You are buying</h6>
                         <h4>{quantity ? quantity : product.minimumOrderQuantity} items</h4></div>

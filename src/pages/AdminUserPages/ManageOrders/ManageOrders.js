@@ -14,7 +14,7 @@ const ManageOrders = () => {
     const navigate = useNavigate()
     const [user] = useAuthState(auth)
     useEffect(() => {
-        fetch('http://localhost:4000/orders')
+        fetch('https://salty-shelf-96840.herokuapp.com/orders')
             .then(res => res.json())
             .then(data => {
                 setMyProducts(data)
@@ -23,7 +23,7 @@ const ManageOrders = () => {
     }, [myProducts])
 
     const handleDelete = id => {
-        const url = `http://localhost:4000/myorders/${id}`
+        const url = `https://salty-shelf-96840.herokuapp.com/myorders/${id}`
         fetch(url, {
             method: 'DELETE'
         })
@@ -35,7 +35,7 @@ const ManageOrders = () => {
             })
     }
     const handleShipping = (id) => {
-        fetch(`http://localhost:4000/orders/${id}`, {
+        fetch(`https://salty-shelf-96840.herokuapp.com/orders/${id}`, {
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

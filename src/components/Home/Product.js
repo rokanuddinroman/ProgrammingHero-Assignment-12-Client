@@ -14,6 +14,7 @@ const Product = (props) => {
                 <div className='pl-1'>
                     <h1>{productName}</h1>
                     <p className='text-[#22D3EE] font-[500]'>{availableQuantity} items available.</p>
+                    <p className='text-[#22D3EE] font-[500]'>Minimum {minimumOrderQuantity} items have to buy.</p>
                     <p className='mb-2'>{description}</p>
                     <span><h2 className='inline pt-[2px]'>{perUnitPrice}$</h2>/p</span>
                 </div>

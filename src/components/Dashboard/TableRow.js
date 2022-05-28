@@ -5,7 +5,7 @@ import { AiFillDelete, AiFillCrown } from 'react-icons/ai';
 const TableRow = ({ user, handleDelete, setShowModal, showModal }) => {
     const { email, role } = user;
     const makeAdmin = () => {
-        fetch(`http://localhost:4000/user/admin/${email}`, {
+        fetch(`https://salty-shelf-96840.herokuapp.com/user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

@@ -13,7 +13,7 @@ const CheckoutForm = ({ order }) => {
     const { _id, totalPrice, productName, email, displayName } = order;
 
     useEffect(() => {
-        fetch('http://localhost:4000/create-payment-intent', {
+        fetch('https://salty-shelf-96840.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -79,7 +79,7 @@ const CheckoutForm = ({ order }) => {
                 order: _id,
                 transactionId: paymentIntent.id
             }
-            fetch(`http://localhost:4000/orders/${_id}`, {
+            fetch(`https://salty-shelf-96840.herokuapp.com/orders/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',

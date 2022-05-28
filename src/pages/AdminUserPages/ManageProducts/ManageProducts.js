@@ -9,7 +9,7 @@ const ManageProducts = () => {
     const [showModal, setShowModal] = useState(null)
     const { products, setProducts, spinner } = useProduct()
     const handleDelete = id => {
-        const url = `http://localhost:4000/product/${id}`
+        const url = `https://salty-shelf-96840.herokuapp.com/product/${id}`
         fetch(url, {
             method: 'DELETE'
         })

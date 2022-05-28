@@ -18,7 +18,7 @@ const MyOrders = () => {
         const getProducts = async () => {
             setSpinner(false)
             const email = user.email;
-            const url = `http://localhost:4000/myorders?email=${email}`
+            const url = `https://salty-shelf-96840.herokuapp.com/myorders?email=${email}`
             const { data } = await axios.get(url, {
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -33,7 +33,7 @@ const MyOrders = () => {
     }, [user])
 
     const handleDelete = id => {
-        const url = `http://localhost:4000/myorders/${id}`
+        const url = `https://salty-shelf-96840.herokuapp.com/myorders/${id}`
         fetch(url, {
             method: 'DELETE'
         })
@@ -64,9 +64,13 @@ const MyOrders = () => {
                 </div>
                 {spinner ? <ApiLoadingLight /> :
                     myProducts.map(product => <div className='product-row flex items-center'>
-                        <p className='product-name'>
-                            <img src={product.image} alt="" />
-                            {product.productName}</p>
+                        <div className="flex flex-wrap">
+                            <p className='product-name'>
+                                <img src={product.image} alt="" />
+                                {product.productName}
+                            </p>
+                            <p className="text-[12px] text-green-500">{product.transactionId}</p>
+                        </div>
                         <p>{product.quantity}</p>
                         <p>{product.totalPrice}$</p>
                         <p className='quantity-column relative '>

@@ -25,7 +25,7 @@ const AddReview = () => {
             reviewMessage: event.target.review.value,
             rating: event.target.rating.value
         }
-        axios.post('http://localhost:4000/review', myReview)
+        axios.post('https://salty-shelf-96840.herokuapp.com/review', myReview)
             .then(response => {
                 const { data } = response;
                 if (data.insertedId) {
