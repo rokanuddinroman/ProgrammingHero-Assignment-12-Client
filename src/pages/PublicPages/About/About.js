@@ -8,7 +8,7 @@ const About = () => {
             <p className='font-bold'>BoldShovel is established in Bangladesh in 2022 by Rokan Uddin. The core focus of BoldShovel is to manufacturering best shovel. </p>
 
             <p>We manufacture the Wooden handles for shovels and brooms of the following diameters: 22 mm - with one end rounded and the other with screw end, 24 mm - with one end rounded and the other with screw end, 25 mm - with one end rounded and the other with cone shape.</p>
-
+            <p></p>
         </div>
     );
 };
