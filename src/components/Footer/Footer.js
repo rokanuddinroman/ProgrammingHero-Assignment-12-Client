@@ -4,7 +4,7 @@ import logo from '../../images/mainlogo.png'
 const Footer = () => {
     return (
         <div>
-            <div className=' bg-primary'>
+            <div className='bg-primary'>
                 <div className="max-w-7xl mx-auto ">
                     <div className="grid grid-cols-4 gap-4 py-6 text-white footer-container">
                         <div>

@@ -16,7 +16,16 @@
   padding: 0;
 }
 
+body {
+  min-height: 100vh;
+}
+
 .qoute {
   font-family: 'Lora', serif;
   /* font-family: 'Poppins', sans-serif; */
+}
+
+.bw-img {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
 }

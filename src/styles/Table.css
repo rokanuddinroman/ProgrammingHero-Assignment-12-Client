@@ -65,7 +65,9 @@
     display: inline;
 }
 
-
+.responsive-row {
+    grid-template-columns: 1fr 1fr 1fr 100px;
+}
 
 @media screen and (max-width:800px) {
     .product-row {
@@ -78,4 +80,7 @@
 
     }
 
+    .responsive-row {
+        grid-template-columns: 1fr;
+    }
 }

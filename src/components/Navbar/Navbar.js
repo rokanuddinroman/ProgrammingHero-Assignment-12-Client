@@ -24,10 +24,11 @@ const Navbar = () => {
                 </Link>
                 <nav className={show ? "mobilenavitems" : "navitems"}>
                     <NavLink className="px-3 navlink" to='/'>Home</NavLink>
+                    {user && <NavLink className="px-3 navlink" to='/dashboard'>Dashboard</NavLink>}
                     <NavLink className="px-3 navlink" to='/blogs'>Blogs</NavLink>
                     <NavLink className="px-3 navlink" to='/reviews'>Reviews</NavLink>
                     <NavLink className="px-3 navlink" to='/myportfolio'>About Developer</NavLink>
-                    {user && <NavLink className="pl-3 navlink mr-5" to='/dashboard'>Dashboard</NavLink>}
+                    <NavLink className="px-3 navlink mr-5" to='/about'>About BoldShovel</NavLink>
                     <div class="inline hr-divider"></div>
                     <div className={show ? 'block profile-button' : 'inline'}>
                         {

@@ -28,7 +28,7 @@ const TableRow = ({ user, handleDelete, setShowModal, showModal }) => {
 
 
     return (
-        <div style={{ gridTemplateColumns: "1fr 1fr 1fr 100px" }} className='product-row flex items-center'>
+        <div className='product-row flex items-center responsive-row'>
             <p className='product-name'>
                 <img className='object-cover rounded-[20px]' src={user?.image || "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLuox6vatPBS6w8edvrLbqXzHimyKXOVejMQ&usqp=CAU"} alt="" />
                 {email}</p>
