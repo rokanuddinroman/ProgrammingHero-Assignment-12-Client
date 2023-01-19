@@ -6,6 +6,16 @@
     overflow-x: auto;
     overscroll-behavior-inline: contain;
     padding-block: 1rem;
+    position: relative;
+}
+
+.review-poster {
+    /* margin-top: auto; */
+}
+
+.review-card {
+    display: flex;
+    flex-direction: column;
 }
 
 @media screen and (max-width:900px) {

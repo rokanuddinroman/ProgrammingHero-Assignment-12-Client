@@ -12,12 +12,29 @@
     display: inline;
 }
 
-.navitems .navlink.active,
+.navitems .navlink.active{
+    color: white;
+    padding: 6px 10px;
+    position: relative;
+}
+
 .mobilenavitems .navlink.active {
     color: white;
     background-color: #9ca3af1e;
     padding: 6px 10px;
     border-radius: 7px;
+    position: relative;
+}
+.navitems .navlink.active::after{
+    content:" ";
+    position:absolute;
+    bottom: 0;
+    left: 50%;
+    right: 50%;
+    width: 5px;
+    height: 5px;
+    background-color: white;
+    border-radius: 50%;
 }
 
 .hr-divider {
